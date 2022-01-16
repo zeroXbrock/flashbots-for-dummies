@@ -92,7 +92,7 @@ async function main() {
     
     // send the bundle to flashbots to be mined
     const shouldSendBundle = process.env.SIMULATION_ONLY ? process.env.SIMULATION_ONLY === "false" : false;
-    console.log("SIMULATION MODE ACTIVE");
+    console.log(shouldSendBundle ? "PRODUCTION MODE ACTIVE" : "SIMULATION MODE ACTIVE");
     provider.on('block', async blockNum => {
         console.log("we got a new block!", blockNum);
         // update tx gas prices
